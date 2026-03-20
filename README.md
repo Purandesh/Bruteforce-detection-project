@@ -77,35 +77,19 @@ hydra -l <username> -P passwords.txt ssh://<target-ip>
 
 ## 📸 Screenshots
 
-> Add screenshots of:
+  <img width="1920" height="922" alt="VirtualBox_Kali Linux_20_03_2026_16_02_35" src="https://github.com/user-attachments/assets/d558201d-b9f5-42c7-a032-8e82607ef163" />
+  <img width="1920" height="922" alt="VirtualBox_Kali Linux_20_03_2026_15_52_35" src="https://github.com/user-attachments/assets/fc7595e4-f3f0-46a1-aa60-56ec6c14bab2" />
+  <img width="1920" height="922" alt="VirtualBox_Ubuntu_20_03_2026_15_14_42" src="https://github.com/user-attachments/assets/d593007c-f32e-4244-ae90-568caede85f9" />
+  <img width="1920" height="922" alt="VirtualBox_Ubuntu_20_03_2026_15_55_01" src="https://github.com/user-attachments/assets/097654ee-a21a-4e2c-805f-b854905e14f2" />
+  <img width="1920" height="922" alt="VirtualBox_Ubuntu_20_03_2026_15_43_26" src="https://github.com/user-attachments/assets/1f6b9387-d0c8-4f51-9e0f-629cc42de67b" />
+  <img width="1920" height="922" alt="VirtualBox_Ubuntu_20_03_2026_15_55_19" src="https://github.com/user-attachments/assets/b67acd71-1795-43d5-ae3d-6822165b09a4" />
 
-* Hydra attack running
-* Wazuh dashboard alerts
-* SSH logs (`auth.log`)
-
----
-
-## 📚 Key Learnings
-
-* Brute-force attack techniques
-* SIEM-based detection mechanisms
-* Log analysis and correlation
-* SOC workflow fundamentals
-
----
-
-## 🔮 Future Improvements
-
-* 🔒 Implement Active Response (auto-block attacker IP)
-* 🔥 Integrate firewall rules (iptables / ufw)
-* 📧 Enable email alerting
-* 📊 Add visualization dashboards
 
 ---
 
 ## 👤 Author
 
-**Your Name**
+Yerramsetty Purandeshwar
 Cybersecurity Enthusiast | SOC Analyst Aspirant
 
 ---

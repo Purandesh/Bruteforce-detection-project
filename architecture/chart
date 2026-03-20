@@ -1,0 +1,23 @@
+        ┌────────────────────┐
+        │    Kali Linux      │
+        │  (Hydra, Nmap)     │
+        │     Attacker       │
+        └────────┬───────────┘
+                 │
+     SSH Brute-force Attack
+                 │
+                 ▼
+        ┌────────────────────┐
+        │     Ubuntu VM      │
+        │   SSH Service      │
+        │  Wazuh Agent       │
+        └────────┬───────────┘
+                 │
+        Log Forwarding
+                 │
+                 ▼
+        ┌────────────────────┐
+        │   Wazuh Server     │
+        │ SIEM + Dashboard   │
+        │ Alert Detection    │
+        └────────────────────┘

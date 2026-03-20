@@ -1,112 +1,113 @@
+🔐 Building a Brute-Force Detection Lab with Wazuh SIEM: A Detailed Guide
+📌 Introduction
 
-# 🔐 Brute Force Detection using Wazuh SIEM
+In today’s cybersecurity landscape, brute-force attacks remain one of the most common methods attackers use to gain unauthorized access to systems. Detecting such attacks in real time is a critical responsibility of a Security Operations Center (SOC).
 
-## 📌 Project Overview
+This project demonstrates how to build a brute-force attack detection lab using Wazuh SIEM, simulating real-world attack scenarios and analyzing logs to generate alerts.
 
-This project demonstrates the detection of **SSH brute-force attacks** using **Wazuh SIEM** in a controlled lab environment.
+🎯 Objective
 
-An attack is simulated using **Hydra** from Kali Linux, while logs are collected from an Ubuntu machine and analyzed by the Wazuh server to generate real-time alerts.
+The goal of this project is to:
 
----
+Simulate an SSH brute-force attack
 
-## 🧱 Architecture
+Monitor authentication logs
 
-Kali Linux (Attacker) → Ubuntu (Target + Wazuh Agent) → Wazuh Server (SIEM + Dashboard)
+Detect suspicious activity using Wazuh
 
----
+Generate real-time alerts in a SIEM dashboard
 
-## 🖥️ Lab Setup
+🧱 Lab Architecture
 
-| Machine      | Role              | Tools Installed          |
-| ------------ | ----------------- | ------------------------ |
-| Kali Linux   | Attacker          | Hydra, Nmap              |
-| Ubuntu       | Victim            | SSH, Wazuh Agent         |
-| Wazuh Server | SIEM & Monitoring | Wazuh Manager, Dashboard |
+Kali Linux (Attacker) → Ubuntu (Target + Wazuh Agent) → Wazuh Server (SIEM)
 
----
+🖥️ Environment Setup
+🔹 Attacker Machine
 
-## ⚙️ Tools & Technologies
+OS: Kali Linux
 
-* Hydra (Brute-force attack simulation)
-* Nmap (Network scanning)
-* Wazuh SIEM (Detection & monitoring)
-* SSH Service (Target service)
-* Linux (Ubuntu & Kali)
+Tools:
 
----
+Hydra
 
-## 🚀 Attack Simulation
+Nmap
 
-### 1️⃣ Port Scanning
+🔹 Victim Machine
 
-```bash
+OS: Ubuntu
+
+Services:
+
+SSH enabled
+
+Wazuh Agent installed
+
+🔹 SIEM Server
+
+Wazuh Server:
+
+Wazuh Manager
+
+Wazuh Dashboard
+
+⚙️ Tools Used
+
+Hydra → Password brute-force tool
+
+Nmap → Network scanner
+
+Wazuh → SIEM platform
+
+SSH → Target service
+
+🚀 Step-by-Step Attack Simulation
+1️⃣ Scan for Open Ports
+
+Before launching the attack, identify open services using Nmap:
+
 nmap -p 22 <target-ip>
-```
 
-### 2️⃣ Brute-force Attack
+This confirms that the SSH port (22) is open.
 
-```bash
+2️⃣ Launch Brute-Force Attack
+
+Use Hydra to perform the attack:
+
 hydra -l <username> -P passwords.txt ssh://<target-ip>
-```
 
-### 3️⃣ Result
+👉 This command attempts multiple password combinations on the SSH service.
 
-* Multiple failed SSH login attempts generated
-* Logs recorded in `/var/log/auth.log`
+3️⃣ Attack Behavior
 
----
+Multiple failed login attempts occur
 
-## 🔍 Detection Workflow
+Logs are generated in:
 
-1. Wazuh Agent monitors system logs on Ubuntu
-2. Logs are forwarded to Wazuh Server
-3. Wazuh rules detect:
+/var/log/auth.log
+🔍 Detection Using Wazuh
 
-   * Multiple failed login attempts
-   * Brute-force attack patterns
-4. Alerts generated in Wazuh Dashboard
+Wazuh continuously monitors system logs and applies detection rules.
 
----
+🔄 Detection Workflow
 
-## 📊 Results
+Wazuh Agent collects logs from Ubuntu
 
-* 🚨 Real-time brute-force attack alerts detected
-* 📈 Log correlation and analysis performed
-* 🔐 Improved visibility into authentication attempts
+Logs are sent to Wazuh Server
 
----
+Wazuh analyzes logs using built-in rules
 
-## 📸 Screenshots
+Alerts are triggered for:
 
-> Add screenshots of:
+Multiple failed logins
 
-* Hydra attack running
-* Wazuh dashboard alerts
-* SSH logs (`auth.log`)
+Brute-force patterns
 
----
+📊 Results and Observations
 
-## 📚 Key Learnings
+🚨 Real-time alerts generated in Wazuh Dashboard
 
-* Brute-force attack techniques
-* SIEM-based detection mechanisms
-* Log analysis and correlation
-* SOC workflow fundamentals
+🔍 Suspicious login activity detected
 
----
+📁 Logs successfully collected and analyzed
 
-## 🔮 Future Improvements
-
-* 🔒 Implement Active Response (auto-block attacker IP)
-* 🔥 Integrate firewall rules (iptables / ufw)
-* 📧 Enable email alerting
-* 📊 Add visualization dashboards
-
----
-
-## 👤 Author
-
-**Your Name**
-Cybersecurity Enthusiast | SOC Analyst Aspirant
-
----
+📈 Clear visibility into attack behavior
